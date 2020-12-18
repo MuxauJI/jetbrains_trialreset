@@ -1,5 +1,6 @@
 # jetbrains_trialreset
-
+For Windows
+```
 @echo off
 for %%a in (PhpStorm WebStorm PyCharm Idea Rider Clion DataGrip RubyMine GoLand) do (
 	for /d %%b in ("%USERPROFILE%\AppData\Roaming\JetBrains\*%%a*") do (
@@ -9,3 +10,4 @@ for %%a in (PhpStorm WebStorm PyCharm Idea Rider Clion DataGrip RubyMine GoLand)
 	)
 	reg delete "HKEY_CURRENT_USER\Software\JavaSoft\Prefs\jetbrains\%%a" /f
 )
+```
