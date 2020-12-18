@@ -14,7 +14,11 @@ for %%a in (PhpStorm WebStorm PyCharm Idea Rider Clion DataGrip RubyMine GoLand)
 For Linux
 ```
 #!/bin/bash
-rm -rf ~/.config/JetBrains/PhpStorm*/eval
-rm -rf ~/.java/.userPrefs/jetbrains/phpstorm
-sed -i '/evlsprt/d' ~/.config/JetBrains/PhpStorm*/options/other.xml
+for v in PhpStorm WebStorm PyCharm Idea Rider Clion DataGrip RubyMine GoLand
+do
+	rm -rf ~/.config/JetBrains/*$v*/eval
+	rm -rf ~/.java/.userPrefs/jetbrains/${v,,}
+	sed -i '/evlsprt/d' ~/.config/JetBrains/*$v*/options/other.xml 2> /dev/null
+done
+
 ```
